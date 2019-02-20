@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>300x250</title>
+	<meta charset='utf-8'>
+	<meta name='format-detection' content='telephone=no'>
+	<meta name='author' content='M&amp;H'>
+	<meta name="ad.size" content="width=300,height=250">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+	<script type="text/javascript" src="http://ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+	<script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_2.0.1_min.js"></script>
+	<script>
+		var clickTag = 'https://www.google.com';
+	</script>
+	<script type="text/javascript" src="setup.js"></script>
+
+	<style>
+
+		* {
+			margin:0;
+			padding:0;
+			border:0;
+			outline:0;
+			font-size:100%;
+			vertical-align:baseline;
+			background:0 0;
+			-webkit-tap-highlight-color:transparent
+		}
+		img { 
+			-moz-user-select:none;
+			-webkit-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+			-webkit-user-drag:none;
+			user-drag:none;
+			-webkit-touch-callout:none
+		}
+
+		/* apply a natural box layout model to all elements */
+		 *, *:before, *:after {
+		    -moz-box-sizing: border-box;
+		    -webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+		}
+
+		.adElement, .adElement img {
+			position: absolute;
+			overflow: hidden;
+		}
+
+		#ad {
+			position: relative;
+			width: 300px;
+			height: 250px;
+			background-color: black;
+			top: 0;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		#ad:after {
+	        position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;
+	        width: 100%;
+	        height: 100%;
+	        box-sizing: border-box;
+	        border: solid 1px white;
+	        pointer-events: none !important;
+	        content: '';
+		}
+
+		#replay {
+			width: 22px;
+			height:22px;
+			top: 0px;
+			right: 0px;
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		#replay path {
+			fill: #fff;
+		}
+
+		.content { 
+			z-index: 0; 
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+		
+		img { 
+			overflow: none;
+		}
+
+		/* Replace the following CSS */
+
+		#logo{top: 86px;left: 73px;width: 152px;height: 76px;z-index: 0;}#logoimg{top: -86px;left: -73px;}#el2{top: 0px;left: 0px;width: 300px;height: 250px;z-index: 0;}#el2img{top: -500px;left: 0px;}
+
+		/* - - - - - - - - - - - - - */
+
+	</style>
+</head>
+
+<body>
+	<div id="ad">
+		<div class="content">
+			
+			<!--  Replace the following HTML -->
+
+			<div id="logo" class="adElement"><img id="logoimg" src="MH_Banner_Toronto_300x250_EN_spritesheet-300x250.png"></div>
+
+			<!-- - - - - - - - - - - - - - - -->
+
+		</div>
+		<svg class="adElement" id="replay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15.3c-1.3 0-2.7-.5-3.7-1.6l1.4-1.4c1.3 1.3 3.3 1.3 4.6 0s1.3-3.3 0-4.6-3.3-1.3-4.5 0L6.3 6.3c2.1-2.1 5.3-2.1 7.4 0 2.1 2.1 2.1 5.3 0 7.4-1 1-2.4 1.6-3.7 1.6z"/><path class="st0" d="M5 15.7v-4.8h4.8z"/></svg>	
+	</div>
+
+</body>
+</html>

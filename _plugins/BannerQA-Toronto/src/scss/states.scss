@@ -1,0 +1,67 @@
+@import "variables";
+
+// Activates when button is on
+._BT_isActive {
+	._BT_panel_actions & {
+		background-color: $c-secondary !important;
+		svg { 
+			opacity: .5 !important;
+		}
+	}
+
+	&#_BT_control_play {
+		#_BT_control_i_play {
+			display: block;
+		}
+		#_BT_control_i_pause {
+			display: none;
+		}
+	}
+}
+
+// Open Ad
+body._BT_expand {
+  #_BT_ {
+  	transform: translateX(0%) !important;
+  }
+}
+
+// Hide Replay Button
+body._BT_hide_replay {
+  #ad #replay {
+  	opacity: 0 !important;
+  }
+}
+
+// Add Grid
+body._BT_grid_active {
+	#_BT_grid {
+		visibility: visible;
+	}
+}
+
+// Add Rulers
+body._BT_rulers_active {
+	#_BT_rulers {
+		visibility: visible;
+	}
+}
+
+// Add preview
+body._BT_preview_active {
+	#_BT_preview {
+		visibility: visible;
+	}
+}
+
+// Add Margin 
+body._BT_margin_active {
+	#ad, #_BT_ad_overlay {
+		top: 100px !important;
+	}
+}
+
+// Make Dark
+body._BT_dark_active {
+	background-color: $backgroundColor !important;
+}

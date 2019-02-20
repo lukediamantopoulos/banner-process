@@ -1,0 +1,15 @@
+// Convert PX to EM
+// ------------------------------------------------------------------
+$base__font-size: 16 !default;
+
+@function em($px, $base: $base__font-size) {
+	@return ($px / $base ) * 1em;
+}
+
+.font-size {
+	font-size: em(16);  // Equals 1em
+}
+
+.font-size-inner {
+	font-size: em(10); // Equals 0.625em
+}

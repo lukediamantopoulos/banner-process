@@ -1,0 +1,357 @@
+@import "global";
+@import "variables";
+@import "actionstyles";
+@import "adGear";
+@import "darkTheme";
+@import "states";
+@import "ad";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+
+// Injected HTML
+#injectedHTML {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+// Removes click ability on everything inside
+// the action so the event listener only
+// picks up the class ._BT_action
+._BT_action * {
+  pointer-events: none;
+}
+
+// Main Panel
+#_BT_ {
+    box-sizing: border-box;
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+  * {
+    @extend .global;
+  }
+  width: $appWidth;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: $backgroundColor;
+  overflow-x: hidden;
+  transition: transform 0.2s ease-in-out;
+  border-left: 2px solid $c-primary;
+  text-align: center;
+  transform: translateX(100%);
+}
+
+// Panel Header
+header#_BT_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  #_BT_logo {
+    width: 60px;
+    height: auto;
+  }
+  
+  #_BT_theme_control {
+    display: flex;
+
+    ._BT_switch_panel {
+      width: 30px;
+      height: 15px;
+      background-color: $c-tertiary;
+      border-radius: 50px;
+      margin-left: 8px;
+      position: relative;
+      transition: all .3s ease-in-out;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        width: 9px;
+        height: 9px;
+        background-color: $c-secondary; 
+        border-radius: 50px;
+        transition: all .3s ease-in-out;
+      }
+    }
+  }
+}
+
+._BT_panel {
+  padding: 10px 20px;
+}
+
+// Panel Specs
+._BT_panel_specs {
+  text-align: left;
+
+  ._BT_panel_specs_title {
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: 600;
+    color: $c-primary;
+  }
+
+  #_BT_meta {
+    padding: 2.5px 7.5px;
+    border-radius: 50px;
+    background-color: $c-secondary;
+    color: $c-primary;
+    font-size: 10px;
+    margin-top: 10px;
+
+    &._BT_warning {
+      background-color: $c-warning !important;
+    }
+  }
+}
+
+// Timing Panel
+._BT_panel_timing {
+    
+    .row {
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+      color: $c-primary;
+
+      &._BT_warning {
+        ._BT_check_panel:after {
+          background-color: $c-warning !important;
+        }
+        span:last-of-type {
+          color: $c-warning !important;
+        }
+      }
+
+      ._BT_check_panel {
+        margin-right: 5px;
+      }
+
+      span:last-of-type {
+        margin-right: 0;
+        margin-left: auto;
+        color: $c-secondary;
+        font-weight: 600;
+      }
+    }
+  }
+
+// Playback Panel
+._BT_panel_playback {
+
+  h4 {
+    text-align: left;
+    margin-bottom:  5px !important;
+  }
+
+  ._BT_settings_playback {
+    position: relative;
+    padding: 20px 0;
+    text-align: center;
+    background-color: $c-panel;
+    border-radius: 5px;
+    overflow: hidden;
+
+    ._BT_control {
+      margin: auto 5px;
+      z-index: 2;
+      display: inline-block;
+      position: relative;
+
+      #_BT_control_i_play {
+        display: none;
+      }
+
+      #_BT_control_i_pause {
+        display: block;
+      }
+
+      svg {
+        pointer-events: none;
+
+        path {
+        transition: all .05s ease-in-out;
+        }
+      }
+
+      &:hover {
+        svg path {
+          fill: darken($c-primary, 10%) !important;
+        }
+      }
+    }
+
+    ._BT_slider {
+      position: absolute;
+      background-color: $c-secondary;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition: .1s linear all; 
+      transform: translatex(0%);
+    }
+  }
+
+  #_BT_current_time,
+  #_BT_total_time  {
+    width: 49%;
+    display: inline-block;
+    padding-top: 5px;
+    font-size: 12px;
+    color: $c-primary;
+  }
+
+  #_BT_current_time {
+    text-align: left;
+  }
+
+  #_BT_total_time {
+    text-align: right;
+  }
+}
+
+// Labels panel
+._BT_panel_labels {
+  padding-bottom: 10px;
+  text-align: left;
+
+  ._BT_label {
+    background: $c-secondary;
+    color: $c-primary;
+    padding: 2px 10px;
+    font-size: 12px;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    &:hover {
+      background: darken( $c-secondary,  2%);
+    }
+  }
+}
+
+// Labels Actions
+._BT_panel_actions {
+  position: relative;
+  padding: 0 20px;
+  text-align: left;
+
+  #_BT_actions_grid {
+    display: flex;
+    flex-wrap: wrap; 
+
+    ._BT_action {
+      position: relative;
+      width: calc(33% - 3.33px);
+      margin: 2.5px;
+      padding-bottom: 33%;
+      border-radius: 5px;
+      background-color: $c-panel;
+      transition: .15s background-color ease-in-out;
+
+      span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 0 7px 7px;
+        font-size: 12px;
+        color: $c-primary;
+        text-align: left;
+        pointer-events: none;
+      }
+
+      svg {
+        opacity: .2;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 20px;
+        pointer-events: none;
+
+        path {
+          fill: $c-primary;
+        }
+      }
+    }
+
+    ._BT_action:nth-child(3n+3) {
+      margin-right: 0;
+    }
+
+    ._BT_action:nth-child(3n+1) {
+      margin-left: 0;
+    }
+  }
+}
+
+#_BT_version {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: .05em;
+  color: $c-primary;
+}
+
+#_BT_close {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  text-transform: uppercase;
+  width: 20px;
+
+  svg {
+    display: block;
+    pointer-events: none;
+  }
+}
+
+// Ad Overlays
+._BT_ad_overlay_item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+#_BT_ad_overlay {
+  pointer-events: none;
+  position: absolute;
+  transition: top .3s ease-in-out;
+  top: 0px;
+
+  & > * {
+    visibility: hidden;
+  }
+}
+
+#_BT_grid {
+  @extend ._BT_ad_overlay_item;
+  background-size: 10px 10px;
+  background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px);
+  opacity: 0.5;
+}
+
+#_BT_preview {
+  @extend ._BT_ad_overlay_item;
+  opacity: 0.6;
+}
+
+._BT_highlight {
+  background-color: yellow !important;
+}

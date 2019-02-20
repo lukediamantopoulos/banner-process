@@ -1,0 +1,41 @@
+$appWidth: 300px;
+
+// Define colors 
+$c-primary: #ececec; // White
+$c-secondary: #0a85b9; // Accent Blue #0a85b9
+$c-tertiary: #08080c; // Darkest Blue
+$c-quarternary: #18181f; // Dark blue -- bg
+
+// Light Theme
+$c2-primary: #08080c;
+$c2-secondary: #0a85b9; // Accent Blue
+$c2-tertiary: #dcdcdc;
+$c2-bg: #f7f8f9;
+$c2-panel: $c2-tertiary;
+
+// Set colors
+$c-panel: #1f212b;
+$c-warning: #c55656;
+$headerColor: $c-secondary;
+$backgroundColor: $c-quarternary;
+$borderColor: $c-secondary;
+$switchColor: $c-secondary;
+
+// Icons
+$featureColor: darken($c-tertiary, 15%);
+$featureHoverColor: lighten($c-secondary, 10%);
+$featureOnColor: $c-secondary;
+$imgGalleryColor: $c-primary;
+
+// UI elements
+$sliderColor: $c-tertiary;
+$sliderHandleColor:$c-primary;
+$sliderBorderColor: black;
+$sliderBackgroundColor: $c-tertiary;
+$sliderRangeColor: #BDBDBD;
+$rulerColor: #49fb35;
+
+// Text color
+$spanColor: $c-secondary;
+$textColor: $c-primary;
+$warningTextColor: #c75353;

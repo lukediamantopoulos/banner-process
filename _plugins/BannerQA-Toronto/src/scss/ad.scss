@@ -1,0 +1,9 @@
+@import "variables";
+
+#ad {
+	transition: all .3s ease-in-out;
+
+	&._BT_corner {
+		margin: 0;
+	}
+}

@@ -1,0 +1,80 @@
+@import "variables";
+
+.global {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    user-select: none;
+}
+
+// Scaffolding
+#injectedHTML {
+
+	._BT_divider {
+		width: calc( 100% - 40px );
+		height: 2px;
+		background: $c-tertiary;
+		margin: 0 20px;
+	}
+
+	.hidden {
+		visibility: hidden;
+	}
+
+	.row {
+		display: flex;
+	}
+
+	// SVG
+	svg {
+		path {
+			fill: $c-primary;
+		}
+	}
+
+	span {
+		display: inline-block;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	// Text Styles
+	h4 {
+		color: $c-primary;
+		font-size: 14px;
+		opacity: .6;
+		font-weight: 300;
+		margin: 0 0 5px 0;
+		padding: 0;
+	}
+
+	h5 {
+		color: $c-primary;
+		font-size: 12px;
+		font-weight: 300;
+		margin: 0;
+		padding: 0;
+	}
+
+	._BT_check_panel {
+		width: 15px;
+		height: 15px;
+		background-color: $c-tertiary;
+		position: relative;
+		border-radius: 50px;
+
+		&:after {
+			content:'';
+			position: absolute;
+			width: 7.5px;
+			height: 7.5px;
+			background-color: $c-secondary;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50px;
+			z-index: 2;
+		}
+	}
+}

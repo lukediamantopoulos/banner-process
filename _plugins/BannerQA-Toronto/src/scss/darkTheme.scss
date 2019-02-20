@@ -1,0 +1,104 @@
+@import "variables";
+
+body._BT_theme_dark #injectedHTML {
+	
+	// Dividers
+	._BT_divider {
+		background: $c2-tertiary;
+	}
+
+	// Label Colors
+	._BT_label {
+		color: $c2-tertiary;
+	}
+
+	// Active buttons
+	&._BT_grid_active {
+		div#_BT_guides {
+			background-color: $c-secondary !important;
+		}
+	}
+
+	&._BT_margin_active {
+		div#_BT_marginButton {
+			background-color: $c-secondary !important;
+		}
+	}
+	&._BT_dark_active {
+		div#_BT_darkButton {
+			background-color: $c-secondary !important;
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6, p, span {
+		color: $c2-primary !important;
+	}
+
+	h4, h5 {
+		font-weight: 500 !important;
+	}
+	
+	// App 
+	#_BT_ {
+		background-color: $c2-bg;
+		border-left: 2px solid $c2-secondary;
+	}
+
+	// Logo 
+	#_BT_logo path {
+		fill: $c2-primary !important;
+	}
+
+	// Meta Tag 
+	#_BT_meta {
+		color: $c2-tertiary !important;
+	}
+
+	// Switch UI
+	#_BT_theme_control {
+		._BT_switch_panel {
+			background-color: darken($c-primary, 10%) !important;
+
+			&:after {
+			 left: 18px !important;
+			 background-color: $c-secondary !important; 
+			}
+		}
+	}
+
+	// Checkbox UI {
+	._BT_check_panel {
+		background-color: $c2-tertiary !important;
+	}
+
+	// Timing section
+	._BT_timing {
+		border-top: 2px solid $c2-tertiary !important;
+		border-bottom: 2px solid $c2-tertiary !important;
+
+		span:last-of-type {
+			color: $c2-secondary !important;
+		}
+	}
+
+	// Controls
+	#_BT_actions_grid {
+		._BT_action  {
+			background-color: $c2-panel !important;
+
+			&:hover {
+				background-color: darken($c2-panel, 5%) !important;
+				color: $c2-tertiary !important;
+			}
+		}
+	}
+
+	// Playback 
+	._BT_settings_playback {
+		background-color: $c2-panel !important;
+
+		path {
+			fill: $c2-tertiary !important;
+		}
+	}
+}
