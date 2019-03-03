@@ -2,9 +2,10 @@
 var creative = {};
 var els;
 
-var gE = function(e){ return document.getElementById(e)};
-var qS = function(e){ return document.querySelector(e)};
-var qSa = function(e){ return [].slice.call(document.querySelectorAll(e))};
+// Helpers
+var gE = function(e) { return document.getElementById(e) };
+var qS = function(e) { return document.querySelector(e) };
+var qSa = function(e) { return [].slice.call( document.querySelectorAll(e) ) };
 
 // Calls on page load
 creative.init = function() {
@@ -13,8 +14,6 @@ creative.init = function() {
 	creative.activate();
 	creative.createTimeline();
 	creative.listeners();
-
-	if ( developerMode ) creative.QA();
 };
 
 creative.activate = function() {
@@ -22,7 +21,11 @@ creative.activate = function() {
 };
 
 creative.listeners = function() {
+	
+	// Click through
 	els.content.addEventListener('click', creative.clickThrough);
+
+	// Replay
 	creative.replay.element.addEventListener('click', creative.replay.restart);
 	creative.replay.element.addEventListener('mouseover', creative.replay.windUp);
 	creative.replay.element.addEventListener('mouseout', creative.replay.windDown);
@@ -33,23 +36,24 @@ creative.clickThrough = function() {
 }
 
 creative.cacheDOM = function() {
-
-	creative.elements = {} 
-	els = creative.elements; // Create namespace for elements
+	creative.elements = {};
+	els = creative.elements;
 
 	els.root = gE('ad');
 	els.content = qS('.content');
 	els.logo = qS('#logo');
 
-	creative.replay = {}; // Replay Element
-	creative.replay.element = gE('replay');
+	creative.replay = {
+		element: gE('replay')
+	}
 }
 
 creative.build = function() {
 
-	creative.specs = {}; // Fetch height & width
-	creative.specs.height = els.root.offsetHeight;
-	creative.specs.width = els.root.offsetWidth;
+	creative.specs = {
+		height: els.root.offsetHeight,
+		width: els.root.offsetWidth
+	}
 
 	creative.meta = {}; // Fetch meta tag to compare to ad dimensions
 	creative.meta.tag = qS('meta[name="ad.size"]');
@@ -75,17 +79,11 @@ creative.build = function() {
 
 creative.createTimeline = function() {
 	creative.tl = new TimelineMax({ onComplete: creative.replay.show })
-		.add('up')
-		.from( els.logo, 2.5, { opacity: 0, y: creative.specs.height/10, ease: Sine.easeInOut })
 
-		.add('down')
-		.from( els.logo, 2.5, { opacity: 1, y: 0, ease: Sine.easeInOut })
+		.add('f1', .5)
+		.to('h1', .75, { y: -50, ease: Expo.easeOut}, 'f1')
+		.to('h1', 1, { y: creative.specs.height, ease: Sine.easeIn})
 
-		.add('back up')
-		.from( els.logo, 2.5, { opacity: 0, y: creative.specs.height/10, ease: Sine.easeInOut })
-
-		.add('back down')
-		.from( els.logo, 2.5, { opacity: 1, y: 0, ease: Sine.easeInOut });
 };
 
 creative.QA = function() {
