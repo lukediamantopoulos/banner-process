@@ -1,13 +1,12 @@
-# M&H Toronto Banner Process
+# Banner Process
 
-This is the repo for the M&H Toronto banner process. 
-
-It includes:
+Includes:
 
 * The Lucky Spritesheet PSD plugin
 * The Banner QA Chrome plugin (beta)
-* Starter files for a 300x250 standard ad
-* Starter files for a 300x250 Sizmek ad
+* Starter files for a 300x250 Standard
+* Starter files for a 300x250 DCS
+* Starter files for a 300x250 Sizmek
 
 ## Installing & Using the Lucky Sprite Photoshop Plugin
 
@@ -25,6 +24,12 @@ if your Photoshop is 2018:
 
 ```
 defaults write com.adobe.CSXS.8.plist PlayerDebugMode 1
+```
+
+if your Photoshop is 2019:
+
+```
+defaults write com.adobe.CSXS.9.plist PlayerDebugMode 1
 ```
 
 - In photoshop, go to window > extensions > Lucky Sprite Panel. Note: If the plugin continues to gives you an error or simply doesn't show, restart your computer. 
@@ -81,9 +86,8 @@ Reference [iab standards](https://www.iab.com/wp-content/uploads/2017/08/IABNewA
 
 ## Chrome Plugins
 
-This repo includes both Toronto & Montreal's banner tools, used to help QA banners. Simply go [chrome extensions](chrome://extensions/), make sure 'developer mode' is on and then click 'Load Unpacked'. Select the root folder of each plugin and enjoy! 
+Simply go [chrome extensions](chrome://extensions/), make sure 'developer mode' is on and then click 'Load Unpacked'. Select the root folder of each plugin and enjoy! 
 
-Note: Due to the nature and build of each cities method's for creating ads, each cities plugin will only work with their own build type.
 
 ### Staging QA
 
@@ -117,41 +121,7 @@ Ex. TW000100_DAZN_soccerBanners_EN.zip
 Your packaged creative can be placed in the 'DELIVERY' folder located in the root of each project. Inside this 'DELIVERY' folder, you will make a folder with today's date in the format (MM-DD-YYYY), which will include the zipped delivery folder.
 DELIVERY -> 09-12-2018 -> project_folder_name -> project_1.zip, project_1.jpg, project_2.zip, project_2.jpg 
 
-## GSAP Walkthrough
 
-Below I will go through some standard syntax to get you started animating - although I highly reccomend you take a peak at the following resources to get a better grasp of how GSAP works.
-
-* [Getting started](https://greensock.com/get-started-js) - Overview documentation to get you started and understand basics
-* [Jumpstart with their interactive slideshow](https://greensock.com/jump-start-js) - Interactive slideshow that goes through the basics
-* [Greensock 101 course](https://ihatetomatoes.net/product/greensock-101/?ref=5) - Hour long course going through most of GSAP's components
-* [Cheatsheet](https://ihatetomatoes.net/wp-content/uploads/2016/07/GreenSock-Cheatsheet-4.pdf) - Go to functions and usage
-
-### Running GSAP
-
-Greensock is hosted on googles CDN for use without affecting file size limitations. The script tag can be found below and should be called before your animtion script.
-```
-<script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_2.0.1_min.js"></script>
-```
-
-#### Basic Usage
-
-The following are some basic structures of a tween. 
-
-```
-.to( [element], [duration], {[to properties]}, [start time]);
-```
-```
-.from( [element], [duration], {[from properties]}, [start time]);
-```
-```
-.fromTo( [element], [duration], {[from properties]}, {[to properties]}, [start time]);
-```
-```
-.staggerTo( [element], [duration], {[to properties]}, [iteration time], [start time]);
-```
-```
-.staggerFromTo( [element], [duration], {[from properties]}, {[to properties]}, [iteration time], [start time]);
-```
 
 
 
